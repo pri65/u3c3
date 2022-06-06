@@ -37,6 +37,8 @@ async function salonData() {
                 }
             });
             btn.innerText="Buy";
+            btn.className="buy_voucher";
+            
             div.append(image,name,price,btn);
             voucher.append(div);
         }
@@ -48,3 +50,15 @@ async function salonData() {
 }
 
 salonData()
+
+let confirm=document.getElementsByClassName("buy_voucher");
+            confirm.addEventListener("click",function() {
+                let amo=document.getElementById("form")
+                amo.innerText=form.amount.value;
+                if(amo>500)
+                {
+                    alert("Sorry! insufficient balance")
+                } else {
+                    alert("Hurray! purchase successful")
+                }
+            });
